@@ -20,7 +20,7 @@ e em seguida para ver a saida execute o comando ``docker compose logs -f``.
 
 # Cliente
 Para o cliente procure no Google um cliente do PangYa JP 983 e baixe.\
-Depois copie o arquivo ProjectG984.pak na pasta client/ e coloquei na pasta do PangYa JP 983.\
+Depois copie o arquivo ProjectG984.pak da pasta client/ e coloquei na pasta do PangYa JP 983.\
 Depois renomeei o arquivo ijl15.dll para ijl15_real.dll da pasta do PangYa JP 983.\
 Depois copie os arquivo ijl15.dll e rugburn.json da pasta client/ para a pasta do PangYa JP 983.\
 Depois execute o ProjectG.exe para abrir o cliente e fazer o login com qualquer conta e senha que a conta vai ser criada.
