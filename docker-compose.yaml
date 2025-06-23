@@ -6,9 +6,9 @@ services:
       - "5432:5432"
     image: postgres
     volumes:
-      - ./psql:/var/lib/postgresql:z
-      - ./dbinit:/docker-entrypoint-initdb.d/:z
-      - ./schema:/opt/bk-squema:z
+      - "./psql:/var/lib/postgresql"
+      - "./dbinit:/docker-entrypoint-initdb.d/"
+      - dbinit:/opt/bk-squema
     environment:
       POSTGRES_PASSWORD: "pangya123"
       POSTGRES_HOST_AUTH_METHOD: "md5"
@@ -22,7 +22,7 @@ services:
     ports:
       - "7777:7777"
       - "20203:20203"
-      - "10303:10303"
+      - "10103:10103"
       - "30303:30303"
       - "4774:4774"
     image: japangya
