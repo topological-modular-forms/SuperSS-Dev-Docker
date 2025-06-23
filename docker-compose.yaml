@@ -6,9 +6,9 @@ services:
       - "5432:5432"
     image: postgres
     volumes:
-      - "./psql:/var/lib/postgresql"
-      - "./dbinit:/docker-entrypoint-initdb.d/"
-      - dbinit:/opt/bk-squema
+      - ./psql:/var/lib/postgresql:z
+      - ./dbinit:/docker-entrypoint-initdb.d/:z
+      - dbinit:/opt/bk-squema:z
     environment:
       POSTGRES_PASSWORD: "pangya123"
       POSTGRES_HOST_AUTH_METHOD: "md5"
@@ -51,8 +51,8 @@ services:
     networks:
       - pangya
     volumes:
-      - www:/usr/share/nginx/html
-      - "./updatelist:/usr/share/nginx/html/S4_Patch/updatelist"
+      - ./www:/usr/share/nginx/html:z
+      - "./updatelist:/usr/share/nginx/html/S4_Patch/updatelist:z"
     ports:
       - "8080:80"
 

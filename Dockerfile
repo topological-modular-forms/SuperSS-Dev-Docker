@@ -61,9 +61,10 @@ COPY ./start.sh /entrypoint.sh
 COPY ./ini/odbc.ini /etc/odbc.ini
 COPY ./ini/odbcinst.ini /etc/odbcinst.ini
 
-RUN mkdir dbinit
-COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/bk-squema-postgres.sql", "./dbinit/bk-squema-postgres.sql"]
-COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/www/pangya/", "./www/"]
+#RUN mkdir dbinit
+#COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/bk-squema-postgres.sql", "./dbinit/bk-squema-postgres.sql"]
+#COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/www/pangya/", "./www/"]
+#RUN chmod 644 ./dbinit/bk-squema-postgres.sql
  
 WORKDIR /opt
  

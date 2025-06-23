@@ -7,7 +7,7 @@
   },
   "PortRewrites": [
     {
-      "FromPort": 10803,
+      "FromPort": 10103,
       "ToPort": 10303,
       "ToAddr": "localhost"
     }
