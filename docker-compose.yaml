@@ -41,6 +41,7 @@ services:
       - "./pangya_jp.iff:/opt/Game Server/data/pangya_jp.iff"
       - "./discord-config.json:/opt/Smart-Calculator/Discord/config.json"
       - www:/www
+      - dbinit:/dbinit
     command: /bin/bash -c "while true; do sleep 10; done"
 
   web:
