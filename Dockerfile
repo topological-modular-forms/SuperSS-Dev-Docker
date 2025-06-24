@@ -13,26 +13,26 @@ RUN git clone https://github.com/Acrisio-Filho/SuperSS-Dev
 WORKDIR SuperSS-Dev/Server\ Lib/Linux\ Builds/
  
 # Build gg
-RUN make -j4 -f Makefile-ggauth70.mk
-RUN make -j4 -f Makefile-ggsrvlib.mk
+RUN make -j12 -f Makefile-ggauth70.mk
+RUN make -j12 -f Makefile-ggsrvlib.mk
  
 # BUild Smart
-RUN make -j4 -f Makefile-smart.mk
+RUN make -j12 -f Makefile-smart.mk
  
 # Build Game Server
-RUN make -j4 -f Makefile-gs.mk
+RUN make -j12 -f Makefile-gs.mk
  
 # Build Auth Server
-RUN make -j4 -f Makefile-as.mk
+RUN make -j12 -f Makefile-as.mk
  
 # Build Login Server
-RUN make -j4 -f Makefile-ls.mk
+RUN make -j12 -f Makefile-ls.mk
  
 # Build Message Server
-RUN make -j4 -f Makefile-ms.mk
+RUN make -j12 -f Makefile-ms.mk
  
 # Build Rank Server
-RUN make -j4 -f Makefile-rs.mk
+RUN make -j12 -f Makefile-rs.mk
  
 # Pangya Server
 FROM ubuntu:22.04 as PangyaServer
@@ -61,10 +61,7 @@ COPY ./start.sh /entrypoint.sh
 COPY ./ini/odbc.ini /etc/odbc.ini
 COPY ./ini/odbcinst.ini /etc/odbcinst.ini
 
-RUN mkdir dbinit
-COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/bk-squema-postgres.sql", "./dbinit/bk-squema-postgres.sql"]
 COPY --chown=pangya:pangya --from=builder ["/tmp/SuperSS-Dev/www/pangya/", "./www/"]
-RUN chmod 644 ./dbinit/bk-squema-postgres.sql
  
 WORKDIR /opt
  
