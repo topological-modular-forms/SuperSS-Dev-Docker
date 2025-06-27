@@ -6,9 +6,9 @@ services:
       - "5432:5432"
     image: postgres
     volumes:
-      - ./psql:/var/lib/postgresql:z
-      - ./dbinit:/docker-entrypoint-initdb.d/:z
-      - ./schema:/opt/bk-squema:z
+      - "./psql:/var/lib/postgresql"
+      - "./dbinit:/docker-entrypoint-initdb.d/"
+      - dbinit:/opt/bk-squema
     environment:
       POSTGRES_PASSWORD: "pangya123"
       POSTGRES_HOST_AUTH_METHOD: "md5"
@@ -41,6 +41,7 @@ services:
       - "./pangya_jp.iff:/opt/Game Server/data/pangya_jp.iff"
       - "./discord-config.json:/opt/Smart-Calculator/Discord/config.json"
       - www:/www
+      - dbinit:/dbinit
     command: /bin/bash -c "while true; do sleep 10; done"
 
   web:
