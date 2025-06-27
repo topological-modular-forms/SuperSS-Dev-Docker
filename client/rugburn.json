@@ -1,0 +1,15 @@
+{
+  "UrlRewrites": {
+	"http://[a-zA-Z0-9:.]+/Translation/Read.aspx": "http://localhost:8080/Translation/Read.html",
+	"http://(.*)/updatelist": "http://localhost:8080/S4_Patch/updatelist",
+	"http://(.*)/extracontents/(.*)": "http://localhost:8080/S4_Patch/extracontents/$1",
+    "http://[a-zA-Z0-9:.]+/(.*)": "http://localhost:8080/$0"
+  },
+  "PortRewrites": [
+    {
+      "FromPort": 10803,
+      "ToPort": 10303,
+      "ToAddr": "localhost"
+    }
+  ]
+}
